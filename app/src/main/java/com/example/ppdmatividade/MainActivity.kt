@@ -16,8 +16,10 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -47,6 +49,7 @@ import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import com.example.ppdmatividade.repository.LoginRepository
 import androidx.lifecycle.lifecycleScope
+import coil.compose.AsyncImage
 import com.example.ppdmatividade.service.RetrofitHelper
 import com.google.gson.JsonObject
 import kotlinx.coroutines.launch
@@ -159,13 +162,27 @@ fun PPDMActivity(
                 shape = RoundedCornerShape(16.dp),
             )
 
-            Image(
-                painter = painterResource(id = R.drawable.profile)
-                , contentDescription = "",
-                modifier = Modifier.clickable {
-                    launcher.launch("image/*")
+            if(fotoUri == null){
+                Image(
+                    painter = painterResource(id = R.drawable.profile)
+                    , contentDescription = "",
+                    modifier = Modifier.clickable {
+                        launcher.launch("image/*")
+                    }
+                )
+            } else {
+
+                Card (modifier = Modifier.height(250.dp).width(250.dp)) {
+                    AsyncImage(
+                        model = fotoUri, contentDescription = "",
+                        modifier = Modifier.clickable {
+                            launcher.launch("image/*")
+                        })
                 }
-            )
+
+            }
+
+            
 
             Button(
                 onClick = {
