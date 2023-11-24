@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "284954868036",
+    "project_id": "atividade-ppdm",
+    "storage_bucket": "atividade-ppdm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:284954868036:android:13d2992f72b2c0660abf11",
+        "android_client_info": {
+          "package_name": "com.example.ppdmatividade"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrxUxS7i2i5lHIgy-b30gua7QGDHqN_X0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
